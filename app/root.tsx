@@ -10,7 +10,12 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 // existing imports
-import { getContacts } from "./data";
+import { createEmptyContact , getContacts } from "./data";
+
+export const action = async () => {
+  const contact = await createEmptyContact();
+  return json({ contact });
+};
 
 import appStylesHref from "./app.css?url";
 
